@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PointsTransactionRepository extends JpaRepository<PointsTransaction,Long> {
-List<PointsTransaction> findBycustomerIdOrderByCreatedAtDesc(Long customerID);
+List<PointsTransaction> findByCustomerIdOrderByCreatedAtDesc(Long customerID);
 }
