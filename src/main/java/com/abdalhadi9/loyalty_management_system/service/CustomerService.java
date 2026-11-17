@@ -14,7 +14,7 @@ private final CustomerRepository customerRepository;
     }
     public Customer registerCustomer(Customer customer){
         if (customerRepository.existsByEmail(customer.getEmail())){
-            throw new RuntimeException("this email is exists");
+            throw new RuntimeException("this email it exists");
         }
         return customerRepository.save(customer);
 
