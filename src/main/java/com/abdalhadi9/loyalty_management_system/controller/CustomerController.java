@@ -1,5 +1,6 @@
 package com.abdalhadi9.loyalty_management_system.controller;
 
+import com.abdalhadi9.loyalty_management_system.dto.CustomerRequest;
 import com.abdalhadi9.loyalty_management_system.entity.Customer;
 import com.abdalhadi9.loyalty_management_system.service.CustomerService;
 import jakarta.validation.Valid;
@@ -20,8 +21,8 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<Customer> register(@RequestBody @Valid Customer customer) {
-        Customer Saved = customerService.registerCustomer(customer);
+    public ResponseEntity<Customer> register(@RequestBody @Valid CustomerRequest request) {
+        Customer Saved = customerService.registerCustomer(request);
         return ResponseEntity.status(HttpStatus.CREATED).body(Saved);
     }
 }
